@@ -1,0 +1,6 @@
+{
+  "exclude": ["_build"],
+  "extraPaths": ["ci/ci_tools"],
+  // Needed for the way we are doing documentation using jupyter notebooks.
+  "reportPossiblyUnboundVariable": false,
+}

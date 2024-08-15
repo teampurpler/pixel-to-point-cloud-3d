@@ -1,0 +1,14 @@
+[MESSAGES CONTROL]
+disable = 
+	broad-exception-raised,
+	duplicate-code,
+	fixme,
+	import-error,
+	invalid-name,
+	line-too-long,
+	missing-docstring,
+	no-member,
+	too-many-arguments,
+	too-many-function-args,
+	too-many-instance-attributes,
+	too-many-locals,
