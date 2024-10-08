@@ -3,22 +3,24 @@ from pathlib import Path
 from ci_tools.repo import get_repo_path
 
 
-def _get_vision3d_path() -> Path:
-    return get_repo_path() / "vision3d"
-
-
-def _get_all_vision3d_markdown_files() -> list[Path]:
-    markdown_files = [get_repo_path() / "README"]
-
-    paths = _get_vision3d_path().rglob("*.py")
+def _get_all_markdown_files() -> list[Path]:
+    markdown_files = []
+    paths = get_repo_path().rglob("*.py")
     for path in paths:
-        lines = path.read_text(encoding="utf-8").splitlines()
-        if "# %% [markdown]" in lines:
+        if "ENV" not in path.parts:
+            lines = path.read_text(encoding="utf-8").splitlines()
+            if "# %% [markdown]" in lines:
+                markdown_files.append(path.parent / path.stem)
+
+    paths = get_repo_path().rglob("*.md")
+    for path in paths:
+        if "ENV" not in path.parts:
             markdown_files.append(path.parent / path.stem)
 
-    paths = _get_vision3d_path().rglob("*.md")
+    paths = get_repo_path().rglob("*.ipynb")
     for path in paths:
-        markdown_files.append(path.parent / path.stem)
+        if "ENV" not in path.parts:
+            markdown_files.append(path.parent / path.stem)
 
     return markdown_files
 
@@ -38,14 +40,13 @@ def _get_all_toc_markdown_files() -> list[Path]:
 
 
 def _get_all_ignores_book_files() -> list[Path]:
-    vision3d_path = _get_vision3d_path()
-    ignore_path = vision3d_path.parent / ".bookignore"
+    ignore_path = get_repo_path() / ".bookignore"
     with open(ignore_path, "r", encoding="utf-8") as file:
         lines = file.readlines()
 
     files = []
     for line in lines:
-        globbed_files = vision3d_path.rglob(line.strip())
+        globbed_files = get_repo_path().rglob(line.strip())
         for globbed_file in globbed_files:
             files.append(globbed_file.parent / globbed_file.stem)
 
@@ -53,7 +54,7 @@ def _get_all_ignores_book_files() -> list[Path]:
 
 
 def test_toc() -> None:
-    markdown_files = _get_all_vision3d_markdown_files()
+    markdown_files = _get_all_markdown_files()
     toc_files = _get_all_toc_markdown_files()
     ignore_files = _get_all_ignores_book_files()
 

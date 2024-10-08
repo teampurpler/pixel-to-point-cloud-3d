@@ -1,2 +1,9 @@
 format: jb-book
-root: README
+root: landing
+chapters:
+- file: workshops/workshops
+  sections:
+  - file: workshops/01_introduction_to_3d_vision
+- file: oaf_vision_3d/module
+  sections:
+  - file: oaf_vision_3d/lens_model

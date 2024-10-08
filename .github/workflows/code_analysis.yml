@@ -16,6 +16,6 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -e ci/ci_tools
+        pip install -e . -e ci/ci_tools
     - name: Analysing the code with all tools
       run: python ci/tests/code_analysis.py
