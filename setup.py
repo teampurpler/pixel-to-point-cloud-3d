@@ -7,8 +7,10 @@ setup(
     packages=find_packages(),
     install_requires=[
         "bokeh",
+        "ipywidgets",
+        "matplotlib",
         "nptyping",
         "numpy",
     ],
-    python_requires=">=3.12",
+    python_requires=">=3.10",
 )

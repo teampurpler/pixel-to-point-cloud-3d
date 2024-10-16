@@ -4,7 +4,7 @@ setup(
     name="ci_tools",
     version="0.1.0",
     packages=find_packages(),
-    python_requires=">=3.12",
+    python_requires=">=3.10",
     install_requires=[
         "black",
         "flake8",

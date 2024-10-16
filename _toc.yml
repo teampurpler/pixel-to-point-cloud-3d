@@ -4,6 +4,7 @@ chapters:
 - file: workshops/workshops
   sections:
   - file: workshops/01_introduction_to_3d_vision
+  - file: workshops/02_understanding_camera_models
 - file: oaf_vision_3d/module
   sections:
   - file: oaf_vision_3d/lens_model

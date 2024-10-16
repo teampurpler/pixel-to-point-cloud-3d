@@ -137,7 +137,7 @@
 # ## Workshop Schedule
 #
 # 1. [Introduction to 3D Vision](workshops/01_introduction_to_3d_vision.ipynb)
-# 2. Understanding Camera Models
+# 2. [Understanding Camera Models](workshops/02_understanding_camera_models.ipynb)
 # 3. Image Distortion and Undistortion
 # 4. 3D-2D Projections and PnP
 # 5. Dual Camera Setups
