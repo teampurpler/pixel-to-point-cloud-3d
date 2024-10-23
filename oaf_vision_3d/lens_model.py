@@ -134,7 +134,7 @@ class DistortionCoefficients:
 def _distort_pixels(
     normalized_pixels: NDArray[Shape["H, W, 2"], Float32],
     distortion_coefficients: DistortionCoefficients,
-) -> NDArray[Shape["H, W"], Float32]:
+) -> NDArray[Shape["H, W, 2"], Float32]:
     r2 = normalized_pixels[..., 0] ** 2 + normalized_pixels[..., 1] ** 2
     r4 = r2 * r2
     r6 = r4 * r2
@@ -201,6 +201,20 @@ def _distort_pixels(
     return distorted[..., :2] / distorted[..., 2:]
 
 
+def _undistort_pixels(
+    normalized_pixels: NDArray[Shape["H, W, 2"], Float32],
+    distortion_coefficients: DistortionCoefficients,
+    number_of_iterations: int = 10,
+) -> NDArray[Shape["H, W, 2"], Float32]:
+    undistorted_normalized_pixels = normalized_pixels.copy()
+    for _ in range(number_of_iterations):
+        undistorted_normalized_pixels += normalized_pixels - _distort_pixels(
+            undistorted_normalized_pixels,
+            distortion_coefficients=distortion_coefficients,
+        )
+    return undistorted_normalized_pixels
+
+
 # %% [markdown]
 # ## Lens Model
 
@@ -227,6 +241,11 @@ class LensModel:
         self, normalized_pixels: NDArray[Shape["H, W, 2"], Float32]
     ) -> NDArray[Shape["H, W, 2"], Float32]:
         return _distort_pixels(normalized_pixels, self.distortion_coefficients)
+
+    def undistort_pixels(
+        self, normalized_pixels: NDArray[Shape["H, W, 2"], Float32]
+    ) -> NDArray[Shape["H, W, 2"], Float32]:
+        return _undistort_pixels(normalized_pixels, self.distortion_coefficients)
 
     def to_dict(self) -> dict:
         return {
