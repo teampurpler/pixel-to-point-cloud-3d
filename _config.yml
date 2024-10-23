@@ -3,6 +3,8 @@ only_build_toc_files: true
 execute:
     execute_notebooks: force
     timeout: 90
+jupyter_cache:
+  enable: true
 sphinx:
     config:
         nb_custom_formats:
