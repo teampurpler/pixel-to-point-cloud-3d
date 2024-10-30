@@ -35,6 +35,25 @@ class CameraMatrix:
     def principal_point(self) -> NDArray[Shape["2"], Float32]:
         return np.array([self.cx, self.cy], dtype=np.float32)
 
+    def as_matrix(self) -> NDArray[Shape["3, 3"], Float32]:
+        return np.array(
+            [
+                [self.fx, 0.0, self.cx],
+                [0.0, self.fy, self.cy],
+                [0.0, 0.0, 1.0],
+            ],
+            dtype=np.float32,
+        )
+
+    @staticmethod
+    def from_matrix(matrix: NDArray[Shape["3, 3"], Float32]) -> CameraMatrix:
+        return CameraMatrix(
+            fx=float(matrix[0, 0]),
+            fy=float(matrix[1, 1]),
+            cx=float(matrix[0, 2]),
+            cy=float(matrix[1, 2]),
+        )
+
     def to_dict(self) -> dict:
         return {
             "fx": self.fx,
@@ -92,6 +111,27 @@ class DistortionCoefficients:
     s4: float = 0.0
     tau_x: float = 0.0
     tau_y: float = 0.0
+
+    def as_opencv_vector(self) -> NDArray[Shape["14"], Float32]:
+        return np.array(
+            [
+                self.k1,
+                self.k2,
+                self.p1,
+                self.p2,
+                self.k3,
+                self.k4,
+                self.k5,
+                self.k6,
+                self.s1,
+                self.s2,
+                self.s3,
+                self.s4,
+                self.tau_x,
+                self.tau_y,
+            ],
+            dtype=np.float32,
+        )
 
     def to_dict(self) -> dict:
         return {
