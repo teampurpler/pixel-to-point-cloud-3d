@@ -11,6 +11,8 @@ setup(
         "matplotlib",
         "nptyping",
         "numpy",
+        "opencv-python",
+        "scipy",
     ],
     python_requires=">=3.10",
 )
