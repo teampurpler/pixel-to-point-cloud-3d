@@ -52,7 +52,7 @@ class TransformationMatrix:
         rvec: NDArray[Shape["3"], Float32], tvec: NDArray[Shape["3"], Float32]
     ) -> TransformationMatrix:
         return TransformationMatrix(
-            rotation=Rotation.from_rotvec(np.array(rvec)), translation=np.array(tvec)
+            rotation=Rotation.from_rotvec(rvec), translation=tvec
         )
 
     def inverse(self) -> TransformationMatrix:
