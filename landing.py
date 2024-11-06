@@ -140,7 +140,7 @@
 # 2. [Understanding Camera Models](workshops/02_understanding_camera_models.ipynb)
 # 3. [Image Distortion and Undistortion](workshops/03_image_distortion_and_undistortion.ipynb)
 # 4. [3D-2D Projections and PnP](workshops/04_3d_2d_projections_and_pnp.ipynb)
-# 5. Dual Camera Setups
+# 5. [Dual Camera Setups](workshops/05_dual_camera_setups.ipynb)
 # 6. From Disparity to Depth
 # 7. Stereo Matching Fundamentals
 # 8. Building Your 3D Vision Pipeline
