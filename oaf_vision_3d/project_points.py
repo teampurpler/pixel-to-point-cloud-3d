@@ -17,7 +17,7 @@ def project_points(
     lens_model: LensModel,
     transformation_matrix: TransformationMatrix = TransformationMatrix(),
 ) -> NDArray[Shape["*, 2"], Float32]:
-    transformed_points = transformation_matrix.transform(points=points[None, ...])
+    transformed_points = transformation_matrix @ points[None, ...]
 
     undistorted_normalized_pixels = (
         transformed_points[..., :2] / transformed_points[..., 2:]
