@@ -1,8 +1,8 @@
 title: OAF Workshop
 only_build_toc_files: true
 execute:
-    execute_notebooks: force
-    timeout: 600
+    execute_notebooks: cache
+    timeout: 120
 jupyter_cache:
   enable: true
 sphinx:
@@ -18,10 +18,3 @@ exclude_patterns:
   - ".pytest_cache"
   - "**/.pytest_cache"
   - "ENV"
-thebe:
-  activate: true
-  binderhub_url: "https://mybinder.org"
-  repository_url: "https://github.com/martvald/oaf-3d-vision-pipeline-workshop"
-  branch: "main"
-launch_buttons:
-    thebe: true

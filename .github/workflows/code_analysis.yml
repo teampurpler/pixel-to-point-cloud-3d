@@ -3,6 +3,8 @@ on: [pull_request, workflow_dispatch]
 jobs:
   all_tests:
     name: All Tests
+    env:
+      CI: true
     runs-on: ubuntu-latest
     strategy:
       matrix:

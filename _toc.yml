@@ -10,10 +10,15 @@ chapters:
   - file: workshops/05_dual_camera_setups
   - file: workshops/06_stereo_matching_fundamentals
   - file: workshops/07_stereo_matching_fundamentals_continued
+  - file: workshops/08_building_your_3d_vision_pipeline
 - file: oaf_vision_3d/module
   sections:
   - file: oaf_vision_3d/lens_model
   - file: oaf_vision_3d/transformation_matrix
-  - file: oaf_vision_3d/poly_2_subvalue_fit
   - file: oaf_vision_3d/project_points
   - file: oaf_vision_3d/triangulation
+  - file: oaf_vision_3d/block_matching
+  - file: oaf_vision_3d/plane_sweeping
+  - file: oaf_vision_3d/poly_2_subvalue_fit
+  - file: oaf_vision_3d/point_cloud_visualization
+  - file: oaf_vision_3d/convolve2d
