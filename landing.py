@@ -45,7 +45,7 @@
 #     ````{tab-item} GIT
 #     Clone the repo to the desired
 #     ```shell
-#     git clone https://github.com/martvald/pixel-to-point-cloud.git
+#     git clone https://github.com/martvald/oaf-3d-vision-pipeline-workshop.git
 #     ```
 #     ````
 #
@@ -143,7 +143,7 @@
 # 5. [Dual Camera Setups](workshops/05_dual_camera_setups.ipynb)
 # 6. [Stereo Matching Fundamentals](workshops/06_stereo_matching_fundamentals.ipynb)
 # 7. [Stereo Matching Fundamentals Continued](workshops/07_stereo_matching_fundamentals_continued.ipynb)
-# 8. Building Your 3D Vision Pipeline
+# 8. [Building Your 3D Vision Pipeline](workshops/08_building_your_3d_vision_pipeline.ipynb)
 #
 # ## Contributing
 #
