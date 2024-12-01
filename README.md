@@ -2,7 +2,7 @@
 
 Welcome to the "Pixel to Point Cloud" workshop repository! This project is designed to guide you through building a comprehensive 3D vision pipeline, transforming 2D images into 3D point clouds using Python and computer vision techniques.
 
-Check the [workshop website](https://martvald.github.io/oaf-3d-vision-pipeline-workshop/) for more detailed information.
+Check the [workshop website](https://teampurpler.github.io/pixel-to-point-cloud-3d/) for more detailed information.
 
 ## Workshop Schedule
 
