@@ -7,7 +7,7 @@
 #
 # ## Overview
 #
-# This [repository](https://github.com/martvald/oaf-3d-vision-pipeline-workshop)
+# This [repository](https://github.com/teampurpler/pixel-to-point-cloud-3d)
 # contains materials for an 8-week workshop series that will introduce you to the
 # fascinating world of 3D computer vision. Whether you're a beginner or have some
 # programming experience, this course will help you understand and implement key
@@ -45,12 +45,12 @@
 #     ````{tab-item} GIT
 #     Clone the repo to the desired
 #     ```shell
-#     git clone https://github.com/martvald/oaf-3d-vision-pipeline-workshop.git
+#     git clone https://github.com/teampurpler/pixel-to-point-cloud-3d.git
 #     ```
 #     ````
 #
 #     ````{tab-item} Manual
-#     1. Go to the [repos github page](https://github.com/martvald/oaf-3d-vision-pipeline-workshop).
+#     1. Go to the [repos github page](https://github.com/teampurpler/pixel-to-point-cloud-3d).
 #     2. Click on the green `Code` button.
 #     3. Click `Download ZIP`.
 #     4. Extract the zip file in the desired location
